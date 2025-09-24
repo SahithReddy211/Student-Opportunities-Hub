@@ -110,10 +110,10 @@ function populateInternships() {
   header.innerHTML = `
      <div style="display:flex; justify-content:center; gap:20px; margin-bottom:20px;">
       <img src="intern1.jpg" 
-           alt="Scholarship Banner 1"
+           alt="Internship Banner 1"
            style="max-height:400px; width:auto;border-radius: 15px;">
       <img src="intern2.jpg" 
-           alt="Scholarship Banner 2"
+           alt="Internship Banner 2"
            style="max-height:400px; width:auto;border-radius: 15px;">
     </div>
     `;
@@ -134,10 +134,10 @@ function populateClubs() {
   header.innerHTML = `
      <div style="display:flex; justify-content:center; gap:20px; margin-bottom:20px;">
       <img src="club1.jpg" 
-           alt="Scholarship Banner 1"
+           alt="Clubs Banner 1"
            style="max-height:400px; width:auto;border-radius: 15px;">
       <img src="club2.jpg" 
-           alt="Scholarship Banner 2"
+           alt="Clubs Banner 2"
            style="max-height:400px; width:auto;border-radius: 15px;">
     </div>
     `;
@@ -159,10 +159,10 @@ function populateWorkshops() {
   header.innerHTML = `
      <div style="display:flex; justify-content:center; gap:20px; margin-bottom:20px;">
       <img src="workshop1.jpg" 
-           alt="Scholarship Banner 1"
+           alt="Workshop Banner 1"
            style="max-height:400px; width:auto;border-radius: 15px;">
       <img src="workshop2.jpg" 
-           alt="Scholarship Banner 2"
+           alt="Workshop Banner 2"
            style="max-height:400px; width:auto;border-radius: 15px;">
     </div>
     `;
@@ -316,4 +316,5 @@ populateScholarships();
 populateInternships();
 populateClubs();
 populateWorkshops();
+
 
