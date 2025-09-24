@@ -6,34 +6,42 @@ function showSection(id) {
 // Sample Data
 const scholarships = [
   { name: 'APSCHE UG Scholarship', eligibility: 'Any UG boys and girls in AP ', amount: '₹10,000', category: 'State', deadline: '30 Sept 2025',
-    Details: 'This is mainly designed for the students to afford their monthly expenses.'},
+    Details: 'This is mainly designed for the students to afford their monthly expenses.',
+    Link: '<a href="https://jnanabhumi.ap.gov.in/" target="_blank">Click here</a>'
+  },
   { name: 'Institutional Merit Scholarship', eligibility: 'Top 10%', amount: '₹20,000', category: 'Private', deadline: '15 Oct 2025',
        Details: 'It is a merit based Scholorship.'
 },
   { name: 'National Talent Scholarship', eligibility: 'Any UG Students', amount: '₹15,000', category: 'Central', deadline: '10 Oct 2025',
-Details: 'Checkout the official webpage for more details https://apshe.com/'
+Details: 'Checkout the official webpage for more details' ,Link: '<a href="https://www.myscheme.gov.in/schemes/nts-ug" target="_blank">Click here</a>'
    },
   {name : 'Reliance FOundation Scholorship', eligibility: 'All 1st year students of any field', amount:'50,000',category: 'Private', deadline:'02 Oct 2025',
        Details: 'It is a merit based Scholorship students should meet the eligibility criteria and attempt an virtual test.'
-      ,Link:'https://www.scholarships.reliancefoundation.org/UG_Scholarship.aspx'},
+      ,Link: '<a href="https://www.scholarships.reliancefoundation.org/UG_Scholarship.aspx" target="_blank">Click here</a>'},
   { 
   name: 'Central Sector Scholarship Scheme', eligibility: 'Students with 80% and above in 12th',  amount: '₹12,000 per year', category: 'Central', deadline: '20 Oct 2025',
-  Details: 'Awarded to meritorious students from economically weaker sections across India.' 
+  Details: 'Awarded to meritorious students from economically weaker sections across India.',
+  Link: '<a href="https://www.education.gov.in/en/scholarships-education-loan-0" target="_blank">Click here</a>' 
 },
 { name: 'Pragati Scholarship for Girls', eligibility: 'Girls pursuing technical courses (AICTE approved)', amount: '₹30,000', category: 'Central', deadline: '05 Nov 2025',
-  Details: 'Specially designed to support girl students pursuing diploma or degree level courses.' 
+  Details: 'Specially designed to support girl students pursuing diploma or degree level courses.' ,
+  Link: '<a href="https://www.aicte.gov.in/schemes/students-development-schemes/Pragati/General-Instructions" target="_blank">Click here</a>'
 },
 {  name: 'JNTU Merit Scholarship', eligibility: 'Top 5% of students in each department', amount: '₹25,000', category: 'State', deadline: '12 Oct 2025',
-  Details: 'Awarded by JNTU to outstanding performers every academic year.' 
+  Details: 'Awarded by JNTU to outstanding performers every academic year.' ,
+  Link: '<a href="https://www.jnu.ac.in/content/fellowshipsscholarships" target="_blank">Click here</a>'
 },
 { name: 'ONGC Scholarship',eligibility: 'SC/ST students in professional courses', amount: '₹48,000 per year',  category: 'Private', deadline: '25 Oct 2025',
-  Details: 'Sponsored by ONGC to encourage students from marginalized communities.' 
+  Details: 'Sponsored by ONGC to encourage students from marginalized communities.' ,
+  Link: '<a href="https://ongcscholar.org/?trk=public_post_reshare-text#/" target="_blank">Click here</a>'
 },
 { name: 'AICTE Saksham Scholarship', eligibility: 'Differently-abled students pursuing technical education', amount: '₹50,000 per year', category: 'Central', deadline: '30 Nov 2025',
-  Details: 'Aimed at supporting specially-abled students in AICTE approved institutions.' 
+  Details: 'Aimed at supporting specially-abled students in AICTE approved institutions.' ,
+  Link: '<a href="https://www.aicte.gov.in/schemes/students-development-schemes/Saksham/General-Instructions" target="_blank">Click here</a>'
 },
 { name: 'Telangana ePASS Post-Matric Scholarship', eligibility: 'Students from Telangana belonging to SC/ST/BC/EBC/Minorities',  amount: 'Variable (tuition + maintenance)',  category: 'State', deadline: '18 Oct 2025',
-  Details: 'Government of Telangana initiative to support students from economically weaker backgrounds.' 
+  Details: 'Government of Telangana initiative to support students from economically weaker backgrounds.' ,
+  Link: '<a href="https://telanganaepass.cgg.gov.in/SchoalrshipsOffered.do" target="_blank">Click here</a>'
 }
 
 
@@ -74,6 +82,17 @@ const workshops = [
 
 // Populate Functions
 function populateScholarships() {
+  const header = document.getElementById('scholarshipHeader');
+  header.innerHTML = `
+     <div style="display:flex; justify-content:center; gap:20px; margin-bottom:20px;">
+      <img src="student.jpg" 
+           alt="Scholarship Banner 1"
+           style="max-height:400px; width:auto;border-radius: 15px;">
+      <img src="student2.jpg" 
+           alt="Scholarship Banner 2"
+           style="max-height:400px; width:auto;border-radius: 15px;">
+    </div>
+  `;
   const container = document.getElementById('scholarshipCards');
   container.innerHTML = '';
   scholarships.forEach((s, i) => {
@@ -81,11 +100,23 @@ function populateScholarships() {
       <div class="card" onclick="openModal('scholarship', ${i})">
         <h3>${s.name}</h3>
         <p>💰 ${s.amount}</p>
+        <p> 🚨Deadline: ${s.deadline}</p>
         <span class="badge ${s.category.toLowerCase()}">${s.category}</span>
       </div>`;
   });
 }
 function populateInternships() {
+   const header = document.getElementById('internshipHeader');
+  header.innerHTML = `
+     <div style="display:flex; justify-content:center; gap:20px; margin-bottom:20px;">
+      <img src="intern1.jpg" 
+           alt="Scholarship Banner 1"
+           style="max-height:400px; width:auto;border-radius: 15px;">
+      <img src="intern2.jpg" 
+           alt="Scholarship Banner 2"
+           style="max-height:400px; width:auto;border-radius: 15px;">
+    </div>
+    `;
   const container = document.getElementById('internshipCards');
   container.innerHTML = '';
   internships.forEach((i, idx) => {
@@ -99,6 +130,17 @@ function populateInternships() {
   });
 }
 function populateClubs() {
+    const header = document.getElementById('clubsHeader');
+  header.innerHTML = `
+     <div style="display:flex; justify-content:center; gap:20px; margin-bottom:20px;">
+      <img src="club1.jpg" 
+           alt="Scholarship Banner 1"
+           style="max-height:400px; width:auto;border-radius: 15px;">
+      <img src="club2.jpg" 
+           alt="Scholarship Banner 2"
+           style="max-height:400px; width:auto;border-radius: 15px;">
+    </div>
+    `;
   const container = document.getElementById('clubCards');
   container.innerHTML = '';
   clubs.forEach((c, idx) => {
@@ -113,6 +155,17 @@ function populateClubs() {
   });
 }
 function populateWorkshops() {
+    const header = document.getElementById('workshopHeader');
+  header.innerHTML = `
+     <div style="display:flex; justify-content:center; gap:20px; margin-bottom:20px;">
+      <img src="workshop1.jpg" 
+           alt="Scholarship Banner 1"
+           style="max-height:400px; width:auto;border-radius: 15px;">
+      <img src="workshop2.jpg" 
+           alt="Scholarship Banner 2"
+           style="max-height:400px; width:auto;border-radius: 15px;">
+    </div>
+    `;
   const container = document.getElementById('workshopCards');
   container.innerHTML = '';
   workshops.forEach((w, idx) => {
@@ -263,3 +316,4 @@ populateScholarships();
 populateInternships();
 populateClubs();
 populateWorkshops();
+
