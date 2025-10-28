@@ -115,6 +115,32 @@ footer {
   position: relative;
   z-index: 1; /* keep text above overlay */
 }
+.contact-form {
+  text-align: center;
+  padding: 40px;
+}
 
+.contact-form form {
+  max-width: 500px;
+  margin: 0 auto;
+}
 
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
 
+.contact-form input[type="submit"] {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-form input[type="submit"]:hover {
+  background-color: #0056b3;
+}
